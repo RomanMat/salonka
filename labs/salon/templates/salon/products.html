@@ -1,0 +1,40 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type = "text/css" href="{% static 'salon/css/products_style.css' %}" rel="stylesheet"> 
+    <title>Products</title>
+</head>
+
+<body>
+    <div class="user">
+        <h1>products.</h1>
+        <header class="user__header">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
+        </header>
+        
+        <div class="list_div">
+            <ul class="products">
+                {% for product in products %}
+                <a href="delete-product/{{product.id}}">
+                <li>
+                    <h2 class="title">{{product.title}}</h2>
+                    <p class="price">{{product.price}} pesso </p>
+                </li></a>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+    <div class="redactor">
+        <a href="{% url 'add_product' %}">add</a>
+    </div>
+    <div class="redactor">
+        <a href="{% url 'hub' %}">hub</a>
+    </div>
+</body>
+</html>

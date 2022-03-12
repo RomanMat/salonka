@@ -1,0 +1,35 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type = "text/css" href="{% static 'salon/css/add_product_style.css' %}" rel="stylesheet">
+    <title>Add Product</title>
+</head>
+
+<body>
+    <div class="user">
+        <header class="user__header">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
+        </header>
+        
+        <form action="{% url 'add_product' %}" method ="post" class="form">
+            {% csrf_token %}
+            <div class="form__group">
+                {{ add_form.title}}
+            </div>
+            
+            <div class="form__group">
+                {{ add_form.price }}
+            </div>
+            
+            <button>Submit</button>
+
+            <a class="registration" href="{% url 'products' %}">cancel</a>
+        </form>
+    </div>
+</body>
+</html>

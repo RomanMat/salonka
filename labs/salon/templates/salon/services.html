@@ -1,0 +1,41 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type = "text/css" href="{% static 'salon/css/services_style.css' %}" rel="stylesheet">
+    <title>Services</title>
+</head>
+
+<body>
+    <div class="user">
+        <header class="user__header">
+            <h1>services.</h1>
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
+        </header>
+        
+        <div class="list_div">
+            <ul class="services">
+                {% for service in services %}
+                <a href="delete-service/{{service.id}}">
+                <li>
+                    <h2 class="title">{{service.title}}</h2>
+                    <p class="description">{{service.description}}</p>
+                    <p class="price">{{service.price}} pesso </p>
+                </li></a>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+    <div class="redactor">
+        <a href="{% url 'add_service' %}">add</a>
+    </div>
+    <div class="redactor">
+        <a href="{% url 'hub' %}">hub</a>
+    </div>
+</body>
+</html>

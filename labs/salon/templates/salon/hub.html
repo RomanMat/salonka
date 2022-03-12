@@ -1,0 +1,42 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type = "text/css" href="{% static 'salon/css/hub_style.css' %}" rel="stylesheet">
+    <title>Hub</title>
+</head>
+
+<body>
+    <div class="user">
+        <header class="user__header">
+            <h1>hub.</h1>
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
+        </header>
+        
+        <div class="list_div">
+            <ul class="items">
+                <a href="{% url 'masters' %}">
+                    <li>
+                        <h2 class="title">masters</h2>
+                    </li>
+                </a>
+                <a href="{% url 'products' %}">
+                    <li>
+                        <h2 class="title">products</h2>
+                    </li>
+                </a>
+                <a href="{% url 'services' %}">
+                    <li>
+                        <h2 class="title">services</h2>
+                    </li>
+                </a>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
